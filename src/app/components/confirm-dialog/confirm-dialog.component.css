@@ -1,0 +1,9 @@
+.mat-mdc-dialog-actions {
+  justify-content: center;
+  gap: 5%;
+}
+
+.mat-mdc-button {
+  padding: 5%;
+  margin-bottom: 2%;
+}

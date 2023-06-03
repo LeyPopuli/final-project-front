@@ -1,0 +1,29 @@
+<section class="hero-list">
+  <div *ngFor="let hero of heroes" class="hero-card" (click)="editHero(hero.id!)">
+    <div class="left-container">
+      <img [src]="hero.imageUrl || 'https://i.ibb.co/bWyFFKM/default-photo.png'" alt="Hero Image"
+        class="hero-image">
+      <div class="hero-actions">
+        <button mat-icon-button color="warn" (click)="confirmDelete(hero)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="editHero(hero.id!)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="hero-details">
+      <h2 class="hero-title">{{ hero.name }}</h2>
+      <p><strong>Concept:</strong> {{ hero.concept }}</p>
+      <p><strong>Nation:</strong> {{ hero.nation?.name }}</p>
+      <span class="extras">
+        <p><strong>Virtue:</strong> {{ hero.virtue?.name | uppercase}}
+          {{ hero.virtue?.description }}
+        </p>
+        <p><strong>Hybris:</strong> {{ hero.hybris?.name | uppercase}}
+          {{ hero.hybris?.description }}
+        </p>
+      </span>
+    </div>
+  </div>
+</section>

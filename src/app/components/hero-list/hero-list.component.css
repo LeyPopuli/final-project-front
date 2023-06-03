@@ -1,0 +1,51 @@
+.hero-card {
+  display: flex;
+  margin-bottom: 16px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-card:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+.hero-list{
+  width: 98%;
+  margin: 1%;
+}
+
+.hero-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px 0 0 8px;
+  margin-top: 10%;
+  object-fit: cover;
+}
+
+.hero-details {
+  margin: 1%;
+  font-size: 1.25em;
+}
+
+.hero-title {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #048a9c;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.left-container {
+  justify-content: column;
+  padding: 1%;
+}
+
+.hero-actions {
+  margin-top: 10%;
+}
+
+.extras {
+  font-size: 0.90em;
+}

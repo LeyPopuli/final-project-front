@@ -1,0 +1,34 @@
+
+
+.footer-text {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: 2%;
+}
+
+.footer-text a {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-text svg {
+  height: 17px;
+  width: 17px;
+}
+
+.mat-toolbar {
+  justify-content: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: rgb(56, 51, 51);
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+}
+
+
+

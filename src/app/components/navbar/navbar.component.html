@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" class="navbar-toolbar">
+  <div class="navbar-left">
+    <a routerLink="" class="navbar-logo">
+      <img src="./assets/7hero-logo.png" alt="7Heroes logo">
+      <span class="navbar-title">7th Hero</span>
+    </a>
+  </div>
+  <div class="navbar-right">
+    <a mat-button routerLink="/info" routerLinkActive="active">7th Sea</a>
+    <a mat-button routerLink="" routerLinkActive="active">Heroes</a>
+    <a mat-button routerLinkActive="active" (click)="createNewHero()">New Hero</a>
+    <button mat-button [matMenuTriggerFor]="userMenu">
+      UserName
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item>Log out</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
