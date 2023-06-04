@@ -15,11 +15,19 @@ export class HeroService {
     return this.http.get<Hero>(this.API_URL + '/Leyre/random');
   }
 
+  getHeroById(id: number): Observable<Hero> {
+    return this.http.get<Hero>(this.API_URL + '/Leyre' + '/' + id);
+  }
+
   getAllHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.API_URL + '/Leyre');
   }
 
-  deleteHeroById(id: number) {
-    return this.http.delete<Hero[]>(this.API_URL + '/Leyre' + '/' + id);
+  deleteHeroById(id: number): Observable<any> {
+    return this.http.delete<any>(this.API_URL + '/Leyre' + '/' + id);
+  }
+
+  saveHero(hero: Hero): Observable<any> {
+    return this.http.post<any>(`${this.API_URL}/Leyre`, hero);
   }
 }

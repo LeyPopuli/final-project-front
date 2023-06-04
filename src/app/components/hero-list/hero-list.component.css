@@ -6,6 +6,33 @@
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.no-heroes-card {
+    margin-top: 10%;
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+  }
+
+.no-heroes-card p {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #048a9c;
+  padding: 2%;
+  padding-right: 0;
+  margin-bottom:0;
+  }
+
+.no-heroes-card span {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #f9b66f;
+  padding: 2%;
+  padding-left: 1%;
+  margin-bottom: 0;
+}
+
 .hero-card:hover {
   transform: scale(1.01);
   cursor: pointer;
@@ -17,9 +44,9 @@
 }
 
 .hero-image {
-  width: 100px;
-  height: 100px;
-  border-radius: 8px 0 0 8px;
+  width: 120px;
+  height: 120px;
+  border-radius: 20px 0 20px 0 ;
   margin-top: 10%;
   object-fit: cover;
 }
@@ -39,11 +66,12 @@
 
 .left-container {
   justify-content: column;
-  padding: 1%;
+  padding: 0.5%;
+  padding-left: 1%;
 }
 
 .hero-actions {
-  margin-top: 10%;
+  padding-left: 7%;
 }
 
 .extras {

@@ -1,0 +1,48 @@
+
+.form-title {
+  font-size: 1.5em;
+  font-weight: 400;
+  padding: 0.5%;
+  margin-left: 1%;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.title-card {
+  background-color: #333;
+  border-radius: 4px;
+  width: 97%;
+}
+
+form {
+  padding-left: 2%;
+}
+
+mat-form-field {
+  margin-left: 1%;
+}
+
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: 1%;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.characteristics-section {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-left: 0.4%;
+}
+
+.characteristics-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}

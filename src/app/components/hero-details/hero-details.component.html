@@ -1,1 +1,178 @@
-<p>hero-details works!</p>
+<form #heroForm="ngForm" *ngIf="hero">
+  <section class="basic-info">
+    <div class="title-card">
+      <h2 class="form-title">Basic info</h2>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" id="name" name="name" [(ngModel)]="hero.name"
+          [readonly]="readonlyMode">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Concept</mat-label>
+        <input matInput type="text" id="concept" name="concept" [(ngModel)]="hero.concept"
+          [readonly]="readonlyMode">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Nation</mat-label>
+        <input matInput type="text" id="nation" name="nation" [(ngModel)]="hero.nation!.name!"
+          [readonly]="readonlyMode">
+      </mat-form-field>
+    </div>
+  </section>
+  <div class="title-card">
+    <h2 class="form-title">Characteristics</h2>
+  </div>
+  <section class="characteristics-section">
+    <div class="characteristics-container">
+      <div *ngFor="let characteristic of hero.characteristics">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput type="text" id="{{characteristic.characteristic.id}}"
+            name="{{characteristic.characteristic.id}}"
+            [(ngModel)]="characteristic.characteristic.name" [readonly]="readonlyMode">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Level</mat-label>
+          <input matInput type="number" id="level{{characteristic.characteristic.name}}"
+            name="level{{characteristic.characteristic.name}}" [(ngModel)]="characteristic.level"
+            [readonly]="readonlyMode">
+        </mat-form-field>
+      </div>
+    </div>
+  </section>
+  <section class="backgrounds-section">
+    <div class="title-card">
+      <h2 class="form-title">Backgrounds</h2>
+    </div>
+    <div *ngFor="let background of hero.backgrounds">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" id="{{background.id}}" name="{{background.id}}"
+          [(ngModel)]="background.name" [readonly]="readonlyMode">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput type="text" id="backgroundDescription{{background.id}}"
+          name="backgroundDescription{{background.id}}" [(ngModel)]="background.description"
+          [readonly]="readonlyMode">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Peculiarity</mat-label>
+        <input matInput type="text" id="backgroundPeculiarity{{background.id}}"
+          name="backgroundPeculiarity{{background.id}}" [(ngModel)]="background.peculiarity"
+          [readonly]="readonlyMode">
+      </mat-form-field>
+    </div>
+  </section>
+  <section class="advantages-section">
+    <div class="title-card">
+      <h2 class="form-title">Advantages</h2>
+    </div>
+    <div *ngFor="let advantage of hero.advantages">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" id="{{advantage.id}}" name="{{advantage.id}}"
+          [(ngModel)]="advantage.name" [readonly]="readonlyMode">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput type="text" id="backgroundDescription{{advantage.id}}"
+          name="backgroundDescription{{advantage.id}}" [(ngModel)]="advantage.description"
+          [readonly]="readonlyMode">
+      </mat-form-field>
+    </div>
+  </section>
+  <div class="title-card">
+    <h2 class="form-title">Skills</h2>
+  </div>
+  <section class="skills-section">
+    <div class="skills-container">
+      <div class="skill-item" *ngFor="let skill of hero.skills">
+        <mat-form-field class="name-field">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" id="skill{{skill.skill.id}}" name="{{skill.skill.id}}"
+            [(ngModel)]="skill.skill.name" [readonly]="readonlyMode">
+        </mat-form-field>
+        <mat-form-field class="level-field">
+          <mat-label>Level</mat-label>
+          <input matInput type="number" id="level{{skill.skill.id}}" name="level{{skill.skill.id}}"
+            [(ngModel)]="skill.level" [readonly]="readonlyMode">
+        </mat-form-field>
+      </div>
+    </div>
+  </section>
+  <section class="arcana-section">
+    <div class="title-card">
+      <h2 class="form-title">Arcana</h2>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Virtue name</mat-label>
+        <input matInput type="text" id="virtueName" name="virtueName"
+          [(ngModel)]="hero.virtue!.name!" [readonly]="readonlyMode">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Virtue description</mat-label>
+        <input matInput type="text" id="virtueDescription" name="virtueDescription"
+          [(ngModel)]="hero.virtue!.description!" [readonly]="readonlyMode">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Hybris name</mat-label>
+        <input matInput type="text" id="hybrisName" name="hybrisName"
+          [(ngModel)]="hero.hybris!.name!" [readonly]="readonlyMode">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Hybris description</mat-label>
+        <input matInput type="text" id="hybrisDescription" name="hybrisDescription"
+          [(ngModel)]="hero.hybris!.description!" [readonly]="readonlyMode">
+      </mat-form-field>
+    </div>
+  </section>
+  <section class="languages-section">
+    <div class="title-card">
+      <h2 class="form-title">Languages</h2>
+    </div>
+    <div *ngFor="let language of hero.languages">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" id="languageName{{language.id}}"
+          name="languageName{{language.id}}" [(ngModel)]="language.name" [readonly]="readonlyMode">
+      </mat-form-field>
+    </div>
+  </section>
+  <section class="lastdetails-section">
+    <div class="title-card">
+      <h2 class="form-title">Last details</h2>
+    </div>
+    <mat-form-field>
+      <mat-label>Religion</mat-label>
+      <input matInput type="text" id="religion" name="religion" [(ngModel)]="hero.religion!.name!"
+        [readonly]="readonlyMode">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Richness</mat-label>
+      <input matInput type="number" id="richness" name="richness" [(ngModel)]="hero.richness"
+        [readonly]="readonlyMode">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>History</mat-label>
+      <textarea matInput type="text" id="history" name="history" [(ngModel)]="hero.history"
+        [readonly]="readonlyMode"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Image URL</mat-label>
+      <input matInput type="text" id="image" name="image" [(ngModel)]="hero.imageUrl"
+        [readonly]="readonlyMode">
+    </mat-form-field>
+  </section>
+  <button mat-raised-button color="primary" type="submit" [disabled]="!heroForm.valid"
+    (click)="saveHero(this.hero)">Submit</button>
+</form>

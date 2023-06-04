@@ -15,6 +15,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { InfoComponent } from './components/info/info.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +28,7 @@ import { MatMenuModule } from '@angular/material/menu';
     ConfirmDialogComponent,
     FooterComponent,
     NavbarComponent,
+    InfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +42,10 @@ import { MatMenuModule } from '@angular/material/menu';
     MatDialogModule,
     MatToolbarModule,
     MatMenuModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -7,8 +7,9 @@
   </div>
   <div class="navbar-right">
     <a mat-button routerLink="/info" routerLinkActive="active">7th Sea</a>
-    <a mat-button routerLink="" routerLinkActive="active">Heroes</a>
-    <a mat-button routerLinkActive="active" (click)="createNewHero()">New Hero</a>
+    <a mat-button routerLink="" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}">Heroes</a>
+    <a mat-button (click)="onNewHeroClick()" routerLinkActive="active">New Hero</a>
     <button mat-button [matMenuTriggerFor]="userMenu">
       UserName
       <mat-icon>arrow_drop_down</mat-icon>

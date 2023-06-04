@@ -30,7 +30,6 @@ export class HeroListComponent implements OnInit {
     this.heroService.getAllHeroes().subscribe({
       next: (heroes: Hero[]) => {
         this.heroes = heroes;
-        debugger;
       },
       error: (error: any) => {
         if (error.status === 417) {
@@ -58,18 +57,18 @@ export class HeroListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result === 'button2') {
-        this.heroService.deleteHeroById(hero.id!).subscribe({
-          next: () => {
+        this.heroService.deleteHeroById(hero.id!).subscribe(
+          () => {
             this.router.navigate(['']);
           },
-          error: (error: any) => {
+          (error: any) => {
             if (error.status === 417) {
               alert(error.error.message);
             } else {
               console.log(error);
             }
-          },
-        });
+          }
+        );
       }
     });
   }

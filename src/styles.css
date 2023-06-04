@@ -7,8 +7,8 @@ body {
   margin-top: 5%;
   padding: 0;
   background-color: #0a6b7a;
-  background-image: url("./assets/waves.png");
-  background-repeat: no-repeat;
+  /* background-image: url("./assets/waves.png"); */
+  background-image: url("./assets/waves2.png");
   background-size: cover;
 }
 

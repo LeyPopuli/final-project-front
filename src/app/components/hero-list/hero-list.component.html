@@ -1,4 +1,10 @@
 <section class="hero-list">
+  <div class="no-heroes-card" *ngIf="heroes.length === 0">
+    <p>Oops, it looks like you don't have any heroes... What are you waiting for to start your
+      own
+      adventures?</p>
+    <span>Go to 'New hero' section.</span>
+  </div>
   <div *ngFor="let hero of heroes" class="hero-card" (click)="editHero(hero.id!)">
     <div class="left-container">
       <img [src]="hero.imageUrl || 'https://i.ibb.co/bWyFFKM/default-photo.png'" alt="Hero Image"
