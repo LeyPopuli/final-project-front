@@ -7,7 +7,8 @@ import {
   ConfirmDialogComponent,
   ConfirmDialogData,
 } from '../confirm-dialog/confirm-dialog.component';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth-service.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-hero-details',
@@ -20,19 +21,30 @@ export class HeroDetailsComponent implements OnInit {
   hero!: Hero;
   isEdit: boolean = false;
   readonlyMode: boolean = true;
+  user?: string;
+
+  private userSubscription?: Subscription;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private heroService: HeroService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
-    if (this.wantEdit() === false) {
-      this.createNewHero();
+    this.userSubscription = this.authService.username$.subscribe((username) => {
+      this.user = username;
+    });
+    if (this.user) {
+      if (this.wantEdit() === false) {
+        this.createNewHero();
+      }
+      this.formTypeDefinition();
+    } else {
+      this.router.navigate(['/login']);
     }
-    this.formTypeDefinition();
   }
 
   wantEdit(): boolean {
@@ -112,7 +124,9 @@ export class HeroDetailsComponent implements OnInit {
 
   saveHero(hero: Hero) {
     this.heroService.saveHero(hero).subscribe({
-      next: () => {},
+      next: () => {
+        this.router.navigate(['/']);
+      },
       error: (error: any) => {
         if (error.status === 417) {
           alert(error.error.message);

@@ -1,21 +1,23 @@
 <mat-toolbar color="primary" class="navbar-toolbar">
   <div class="navbar-left">
-    <a routerLink="" class="navbar-logo">
+    <p class="navbar-logo">
       <img src="./assets/7hero-logo.png" alt="7Heroes logo">
       <span class="navbar-title">7th Hero</span>
-    </a>
+    </p>
   </div>
   <div class="navbar-right">
-    <a mat-button routerLink="/info" routerLinkActive="active">7th Sea</a>
-    <a mat-button routerLink="" routerLinkActive="active"
+    <a *ngIf="user" mat-button routerLink="/info" routerLinkActive="active">7th Sea</a>
+    <a *ngIf="user" mat-button routerLink="" routerLinkActive="active"
       [routerLinkActiveOptions]="{exact: true}">Heroes</a>
-    <a mat-button (click)="onNewHeroClick()" routerLinkActive="active">New Hero</a>
-    <button mat-button [matMenuTriggerFor]="userMenu">
-      UserName
-      <mat-icon>arrow_drop_down</mat-icon>
+    <a *ngIf="user" mat-button (click)="onNewHeroClick()" routerLinkActive="active">New Hero</a>
+    <button *ngIf="user" mat-button [matMenuTriggerFor]="userMenu">
+      {{ user }}
+      <mat-icon *ngIf="user">arrow_drop_down</mat-icon>
     </button>
     <mat-menu #userMenu="matMenu">
-      <button mat-menu-item>Log out</button>
+      <button mat-menu-item *ngIf="user" (click)="logOut()">Log out</button>
     </mat-menu>
+
+    <button *ngIf="!user" mat-button routerLink="/login">Log in</button>
   </div>
 </mat-toolbar>

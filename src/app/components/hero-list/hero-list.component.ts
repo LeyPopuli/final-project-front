@@ -7,6 +7,8 @@ import {
   ConfirmDialogData,
 } from '../confirm-dialog/confirm-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/auth-service.service';
 
 @Component({
   selector: 'app-hero-list',
@@ -15,15 +17,26 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class HeroListComponent implements OnInit {
   heroes: Hero[] = [];
+  user?: string;
+
+  private userSubscription?: Subscription;
 
   constructor(
     private router: Router,
     private heroService: HeroService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
-    this.getAllHeroes();
+    this.userSubscription = this.authService.username$.subscribe((username) => {
+      this.user = username;
+    });
+    if (this.user) {
+      this.getAllHeroes();
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
 
   getAllHeroes() {
@@ -75,5 +88,10 @@ export class HeroListComponent implements OnInit {
 
   editHero(heroId: number) {
     this.router.navigate(['/hero-details'], { queryParams: { id: heroId } });
+  }
+
+  onDownloadClick(heroId: number) {
+    const downloadUrl = `http://localhost:8080/api/v1/hero/${this.user}/${heroId}/pdf`;
+    window.location.href = downloadUrl;
   }
 }

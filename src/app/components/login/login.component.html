@@ -1,0 +1,39 @@
+<form class="auth-form">
+  <div class="title-card">
+    <h2 class="form-title">{{ isRegistrationMode ? 'New account' : 'Log in' }}</h2>
+  </div>
+  <p class="success-message" *ngIf="userCreated">New user created successfully. Now, log in with
+    your credentials.</p>
+  <div class="inputs-container">
+    <mat-form-field>
+      <mat-label>User</mat-label>
+      <input matInput placeholder="user" name="userName" [(ngModel)]="userName" pattern=".{5,}">
+      <mat-error name="msg-error" *ngIf="userName!.length < 5">Username must
+        have at
+        least 5
+        characters.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="password" name="password" [(ngModel)]="password"
+        pattern=".{5,}">
+      <mat-error name="msg-error" *ngIf="password!.length < 5">Password must
+        have at
+        least 5
+        characters.</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="!isRegistrationMode">
+    <a (click)="activeRegistrationMode()">Not a hero yet?</a>
+  </div>
+
+  <div *ngIf="isRegistrationMode">
+    <a (click)="activeRegistrationMode()">Are you a true hero already?</a>
+  </div>
+
+  <div class="btn-container">
+    <button mat-raised-button color="primary"
+      (click)="loginOrRegister()">{{ isRegistrationMode ? 'Register' : 'Sign in' }}</button>
+  </div>
+</form>

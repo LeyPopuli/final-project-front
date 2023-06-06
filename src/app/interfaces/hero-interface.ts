@@ -7,11 +7,12 @@ import { Language } from './language-interface';
 import { Nation } from './nation-interface';
 import { Religion } from './religion-interface';
 import { Skill } from './skill-interface';
+import { User } from './user-interface';
 import { Virtue } from './virtue-interface';
 
 export interface Hero {
   id?: number;
-  user: string;
+  user: User;
   name: string;
   concept: string;
   nation?: Nation;
