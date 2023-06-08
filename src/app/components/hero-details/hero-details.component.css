@@ -1,6 +1,6 @@
 
 .form-title {
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: 400;
   padding: 0.5%;
   margin-left: 1%;
@@ -45,4 +45,8 @@ mat-form-field {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+}
+
+input:not([readonly]) {
+  box-shadow: 0 0 5px rgba(127, 255, 212, 1);
 }

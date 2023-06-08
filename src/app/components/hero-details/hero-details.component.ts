@@ -64,7 +64,7 @@ export class HeroDetailsComponent implements OnInit {
   dialogDataNewHero: ConfirmDialogData = {
     title: 'New hero',
     message:
-      'Do you desire to forge an epic hero or meticulously tailor their journey?',
+      'Do you desire to forge a random epic hero or meticulously tailor their journey?',
     button1: 'Customize',
     button2: 'Random',
   };

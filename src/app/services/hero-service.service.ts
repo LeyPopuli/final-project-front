@@ -39,6 +39,8 @@ export class HeroService {
   }
 
   downloadPdf(id: number): Observable<any> {
-    return this.http.get<any>(`${this.API_URL}/${this.username}/${id}/pdf`);
+    return this.http.get(`${this.API_URL}/${this.username}/${id}/pdf`, {
+      responseType: 'blob',
+    });
   }
 }

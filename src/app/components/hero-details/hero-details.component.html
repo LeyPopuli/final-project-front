@@ -6,15 +6,13 @@
     <div>
       <mat-form-field>
         <mat-label>Name</mat-label>
-        <input matInput type="text" id="name" name="name" [(ngModel)]="hero.name"
-          [readonly]="readonlyMode">
+        <input matInput type="text" id="name" name="name" [(ngModel)]="hero.name">
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
         <mat-label>Concept</mat-label>
-        <input matInput type="text" id="concept" name="concept" [(ngModel)]="hero.concept"
-          [readonly]="readonlyMode">
+        <input matInput type="text" id="concept" name="concept" [(ngModel)]="hero.concept">
       </mat-form-field>
     </div>
     <div>
@@ -159,20 +157,19 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>Richness</mat-label>
-      <input matInput type="number" id="richness" name="richness" [(ngModel)]="hero.richness"
-        [readonly]="readonlyMode">
+      <input matInput type="number" id="richness" name="richness" [(ngModel)]="hero.richness">
     </mat-form-field>
     <mat-form-field>
-      <mat-label>History</mat-label>
-      <textarea matInput type="text" id="history" name="history" [(ngModel)]="hero.history"
-        [readonly]="readonlyMode"></textarea>
+      <mat-label>Reputation</mat-label>
+      <input matInput type="text" id="reputation" name="reputation" [(ngModel)]="hero.reputation">
     </mat-form-field>
     <mat-form-field>
       <mat-label>Image URL</mat-label>
       <input matInput type="text" id="image" name="image" [(ngModel)]="hero.imageUrl"
-        [readonly]="readonlyMode">
+        pattern="^(http|https)://[^\s/$.?#].[^\s]*$"
+        title="Please enter a valid URL starting with 'http://' or 'https://'.">
     </mat-form-field>
   </section>
   <button mat-raised-button color="primary" type="submit" [disabled]="!heroForm.valid"
-    (click)="saveHero(this.hero)">Submit</button>
+    (click)="saveHero(this.hero)">Save</button>
 </form>

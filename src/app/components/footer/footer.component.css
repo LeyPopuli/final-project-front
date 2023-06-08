@@ -2,14 +2,14 @@
 
 .footer-text {
   color: white;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 400;
   margin-right: 2%;
 }
 
 .footer-text a {
   color: white;
-  font-size: 14px;
+  font-size: 10px;
   text-decoration: none;
   font-weight: 500;
 }
@@ -23,6 +23,7 @@
   justify-content: center;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   background-color: rgb(56, 51, 51);
+  max-height: 45px;
 }
 
 .footer-content {

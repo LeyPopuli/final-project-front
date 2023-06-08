@@ -7,7 +7,7 @@ import {
   ConfirmDialogData,
 } from '../confirm-dialog/confirm-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-import { Subscription } from 'rxjs';
+import { Subscription, filter, switchMap } from 'rxjs';
 import { AuthService } from 'src/app/services/auth-service.service';
 
 @Component({
@@ -70,18 +70,18 @@ export class HeroListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result === 'button2') {
-        this.heroService.deleteHeroById(hero.id!).subscribe(
-          () => {
-            this.router.navigate(['']);
+        this.heroService.deleteHeroById(hero.id!).subscribe({
+          next: () => {
+            this.getAllHeroes();
           },
-          (error: any) => {
+          error: (error) => {
             if (error.status === 417) {
               alert(error.error.message);
             } else {
               console.log(error);
             }
-          }
-        );
+          },
+        });
       }
     });
   }
@@ -90,8 +90,25 @@ export class HeroListComponent implements OnInit {
     this.router.navigate(['/hero-details'], { queryParams: { id: heroId } });
   }
 
-  onDownloadClick(heroId: number) {
-    const downloadUrl = `http://localhost:8080/api/v1/hero/${this.user}/${heroId}/pdf`;
-    window.location.href = downloadUrl;
+  onDownloadClick(heroId: number, heroName: string) {
+    this.heroService
+      .downloadPdf(heroId)
+      .subscribe((response) =>
+        this.downLoadFile(heroName, response, 'application/pdf')
+      );
+  }
+
+  downLoadFile(heroName: string, data: any, type: string) {
+    const blob = new Blob([data], { type: type });
+    var fileURL = window.URL.createObjectURL(blob);
+    var fileLink = document.createElement('a');
+    fileLink.href = fileURL;
+    const timestamp = new Date();
+    const formattedTimestamp = timestamp.toLocaleString().replace(',', '-');
+    fileLink.download = `7thHero_${heroName.replace(
+      ' ',
+      ''
+    )}_${formattedTimestamp}`;
+    fileLink.click();
   }
 }

@@ -11,7 +11,7 @@
 .btn-container {
   display: flex !important;
   justify-content: flex-end;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .inputs-container {
@@ -22,6 +22,7 @@
 mat-form-field {
   display: block;
   margin-bottom: 3%;
+  width: 90%;
 }
 
 a {
@@ -35,9 +36,11 @@ a {
   background-color: #c8e6c9;
   padding: 4px;
   border-radius: 4px;
-  margin-bottom: 0;
+  margin: 0;
+  width: max-content;
+  font-size: 0.80em;
 }
 
 .form-title {
-  margin-bottom: 8%;
+  margin-bottom: 5%;
 }

@@ -1,27 +1,77 @@
-# FinalProjectFront
+![title-img](./src/assets/readme-images/title.png){width='100%'}
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+7th Hero is a web application that allows users to discover and get started with the 7th Sea game, a role-playing game of adventure and exploration. If you want to learn more about this world, I suggest you visit: https://septimomarrev.wixsite.com/revolution
 
-## Development server
+The developed app allows users to create heroes (the main characters of the 7th Sea universe) with random characteristics while adhering to the rules of the core manual. Users can also edit and delete these heroes.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Furthermore, the app enables the storage and download of these heroes in editable PDF format, greatly facilitating the task of preparing and developing the characters.
 
-## Code scaffolding
+![diagrams-img](./src/assets/readme-images/diagrams.png){width='100%'}
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The class and user diagrams are presented below:
 
-## Build
+### CLASS DIAGRAM
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![class-diagram](./src/assets/readme-images/class-diagram.png)
 
-## Running unit tests
+### USER DIAGRAM
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![user-diagram](./src/assets/readme-images/user-diagram.png)
 
-## Running end-to-end tests
+![workflow-img](./src/assets/readme-images/workflow.png){width='100%'}
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. User Registration
 
-## Further help
+   - Enter username and password
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. User Login
+
+   - After successful registration, the user can log in to the app
+
+3. Main Menu 3. 1. Information
+
+   - View information about the 7th Sea universe
+
+   3. 2. Heroes
+
+   - Edit heroes
+   - Delete heroes
+   - Download heroes as PDF
+
+   3. 3. New Hero
+
+   - Create random heroes
+
+   3. 4. Logout
+
+   - Logout from the app at any time
+
+4. Page 404 for unknown url paths
+
+![start-img](./src/assets/readme-images/start.png){width='100%'}
+
+To run the application, you need to complete the following steps in the described order:
+
+1. Download the back-end project from the repository: https://github.com/LeyPopuli/final-project-back.git
+
+2. Initialize the back-end application by running the file "com/charactergeneratorgroup/charactergenerator/CharacterGeneratorApplication.java".
+
+3. Populate the database by running the file "static/bbdd_creation.sql".
+
+4. Download the front-end project from the current repository: https://github.com/LeyPopuli/final-project-front.git
+
+5. Install the project dependencies.
+
+6. Initialize the front-end application.
+
+Congratulations! You are now ready to register and become a hero!
+
+![gratitude-img](./src/assets/readme-images/gratitude.png){width='100%'}
+
+This project has been developed by Leyre Gracia (LeyPopuli), but it wouldn't have been possible without:
+
+1. The hero Daniel, my technical consultant and a place to cry equally.
+
+2. The hero Jarko, who has supported and encouraged me at all times. Besides, sharing my passion for role-playing games.
+
+3. My fellow heroes and the role-playing community, who have always shown interest in my work and given me the wings I needed.

@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="navbar-toolbar">
   <div class="navbar-left">
-    <p class="navbar-logo">
+    <p class="navbar-logo" routerLink="">
       <img src="./assets/7hero-logo.png" alt="7Heroes logo">
       <span class="navbar-title">7th Hero</span>
     </p>
@@ -15,9 +15,9 @@
       <mat-icon *ngIf="user">arrow_drop_down</mat-icon>
     </button>
     <mat-menu #userMenu="matMenu">
-      <button mat-menu-item *ngIf="user" (click)="logOut()">Log out</button>
+      <button mat-menu-item class="logout-button" *ngIf="user" (click)="logOut()">Log out</button>
     </mat-menu>
 
-    <button *ngIf="!user" mat-button routerLink="/login">Log in</button>
+    <a *ngIf="!user" mat-button routerLink="/login">Log in</a>
   </div>
 </mat-toolbar>

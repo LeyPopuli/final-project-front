@@ -25,7 +25,6 @@ export interface Hero {
   skills?: HeroSkill[];
   virtue?: Virtue;
   hybris?: Hybris;
-  history?: string;
   imageUrl?: string;
   languages?: Language[];
   maximumBackgrounds: number;
