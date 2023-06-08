@@ -1,4 +1,4 @@
-![title-img](./src/assets/readme-images/title.png){width='100%'}
+![title-img](./src/assets/readme-images/title.png)
 
 7th Hero is a web application that allows users to discover and get started with the 7th Sea game, a role-playing game of adventure and exploration. If you want to learn more about this world, I suggest you visit: https://septimomarrev.wixsite.com/revolution
 
@@ -6,7 +6,7 @@ The developed app allows users to create heroes (the main characters of the 7th 
 
 Furthermore, the app enables the storage and download of these heroes in editable PDF format, greatly facilitating the task of preparing and developing the characters.
 
-![diagrams-img](./src/assets/readme-images/diagrams.png){width='100%'}
+![diagrams-img](./src/assets/readme-images/diagrams.png)
 
 The class and user diagrams are presented below:
 
@@ -18,7 +18,7 @@ The class and user diagrams are presented below:
 
 ![user-diagram](./src/assets/readme-images/user-diagram.png)
 
-![workflow-img](./src/assets/readme-images/workflow.png){width='100%'}
+![workflow-img](./src/assets/readme-images/workflow.png)
 
 1. User Registration
 
@@ -48,7 +48,7 @@ The class and user diagrams are presented below:
 
 4. Page 404 for unknown url paths
 
-![start-img](./src/assets/readme-images/start.png){width='100%'}
+![start-img](./src/assets/readme-images/start.png)
 
 To run the application, you need to complete the following steps in the described order:
 
