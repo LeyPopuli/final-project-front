@@ -4,16 +4,18 @@
       <h2 class="form-title">Basic info</h2>
     </div>
     <div>
-      <mat-form-field>
+      <mat-form-field class="medium">
         <mat-label>Name</mat-label>
         <input matInput type="text" id="name" name="name" [(ngModel)]="hero.name">
       </mat-form-field>
+      <mat-icon>edit</mat-icon>
     </div>
     <div>
-      <mat-form-field>
+      <mat-form-field class="large">
         <mat-label>Concept</mat-label>
         <input matInput type="text" id="concept" name="concept" [(ngModel)]="hero.concept">
       </mat-form-field>
+      <mat-icon>edit</mat-icon>
     </div>
     <div>
       <mat-form-field>
@@ -54,17 +56,17 @@
         <input matInput type="text" id="{{background.id}}" name="{{background.id}}"
           [(ngModel)]="background.name" [readonly]="readonlyMode">
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field class="large">
         <mat-label>Description</mat-label>
-        <input matInput type="text" id="backgroundDescription{{background.id}}"
+        <textarea matInput type="text" id="backgroundDescription{{background.id}}"
           name="backgroundDescription{{background.id}}" [(ngModel)]="background.description"
-          [readonly]="readonlyMode">
+          [readonly]="readonlyMode"></textarea>
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field class="large">
         <mat-label>Peculiarity</mat-label>
-        <input matInput type="text" id="backgroundPeculiarity{{background.id}}"
+        <textarea matInput type="text" id="backgroundPeculiarity{{background.id}}"
           name="backgroundPeculiarity{{background.id}}" [(ngModel)]="background.peculiarity"
-          [readonly]="readonlyMode">
+          [readonly]="readonlyMode"></textarea>
       </mat-form-field>
     </div>
   </section>
@@ -78,11 +80,11 @@
         <input matInput type="text" id="{{advantage.id}}" name="{{advantage.id}}"
           [(ngModel)]="advantage.name" [readonly]="readonlyMode">
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field class="large">
         <mat-label>Description</mat-label>
-        <input matInput type="text" id="backgroundDescription{{advantage.id}}"
+        <textarea matInput type="text" id="backgroundDescription{{advantage.id}}"
           name="backgroundDescription{{advantage.id}}" [(ngModel)]="advantage.description"
-          [readonly]="readonlyMode">
+          [readonly]="readonlyMode"></textarea>
       </mat-form-field>
     </div>
   </section>
@@ -115,10 +117,10 @@
         <input matInput type="text" id="virtueName" name="virtueName"
           [(ngModel)]="hero.virtue!.name!" [readonly]="readonlyMode">
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field class="large">
         <mat-label>Virtue description</mat-label>
-        <input matInput type="text" id="virtueDescription" name="virtueDescription"
-          [(ngModel)]="hero.virtue!.description!" [readonly]="readonlyMode">
+        <textarea matInput type="text" id="virtueDescription" name="virtueDescription"
+          [(ngModel)]="hero.virtue!.description!" [readonly]="readonlyMode"></textarea>
       </mat-form-field>
     </div>
     <div>
@@ -127,10 +129,10 @@
         <input matInput type="text" id="hybrisName" name="hybrisName"
           [(ngModel)]="hero.hybris!.name!" [readonly]="readonlyMode">
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field class="large">
         <mat-label>Hybris description</mat-label>
-        <input matInput type="text" id="hybrisDescription" name="hybrisDescription"
-          [(ngModel)]="hero.hybris!.description!" [readonly]="readonlyMode">
+        <textarea matInput type="text" id="hybrisDescription" name="hybrisDescription"
+          [(ngModel)]="hero.hybris!.description!" [readonly]="readonlyMode"></textarea>
       </mat-form-field>
     </div>
   </section>
@@ -150,7 +152,7 @@
     <div class="title-card">
       <h2 class="form-title">Last details</h2>
     </div>
-    <mat-form-field>
+    <mat-form-field class="medium">
       <mat-label>Religion</mat-label>
       <input matInput type="text" id="religion" name="religion" [(ngModel)]="hero.religion!.name!"
         [readonly]="readonlyMode">
@@ -159,16 +161,19 @@
       <mat-label>Richness</mat-label>
       <input matInput type="number" id="richness" name="richness" [(ngModel)]="hero.richness">
     </mat-form-field>
+    <mat-icon>edit</mat-icon>
     <mat-form-field>
       <mat-label>Reputation</mat-label>
       <input matInput type="text" id="reputation" name="reputation" [(ngModel)]="hero.reputation">
     </mat-form-field>
-    <mat-form-field>
+    <mat-icon>edit</mat-icon>
+    <mat-form-field class="large">
+      <p class="small-message">Remember to insert a valid url:
+        "https:...jpg"</p>
       <mat-label>Image URL</mat-label>
-      <input matInput type="text" id="image" name="image" [(ngModel)]="hero.imageUrl"
-        pattern="^(http|https)://[^\s/$.?#].[^\s]*$"
-        title="Please enter a valid URL starting with 'http://' or 'https://'.">
+      <input matInput type="text" id="image" name="image" [(ngModel)]="hero.imageUrl">
     </mat-form-field>
+    <mat-icon>edit</mat-icon>
   </section>
   <button mat-raised-button color="primary" type="submit" [disabled]="!heroForm.valid"
     (click)="saveHero(this.hero)">Save</button>
