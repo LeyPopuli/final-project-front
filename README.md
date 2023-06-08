@@ -61,7 +61,7 @@ To run the application, you need to complete the following steps in the describe
 
 Congratulations! You are now ready to register and become a hero!
 
-![gratitude-img](./src/assets/readme-images/gratitude.png){width='100%'}
+![gratitude-img](./src/assets/readme-images/gratitude.png)
 
 This project has been developed by Leyre Gracia (LeyPopuli), but it wouldn't have been possible without:
 
