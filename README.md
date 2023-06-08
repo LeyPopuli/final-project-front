@@ -21,30 +21,25 @@ The class and user diagrams are presented below:
 ![workflow-img](./src/assets/readme-images/workflow.png)
 
 1. User Registration
-
    - Enter username and password
 
 2. User Login
-
    - After successful registration, the user can log in to the app
 
-3. Main Menu 3. 1. Information
+3. Main Menu 
+   - Information
+      - View information about the 7th Sea universe
 
-   - View information about the 7th Sea universe
+   - Heroes
+     - Edit heroes
+     - Delete heroes
+     - Download heroes as PDF
 
-   3. 2. Heroes
+    - New Hero
+      - Create random heroes
 
-   - Edit heroes
-   - Delete heroes
-   - Download heroes as PDF
-
-   3. 3. New Hero
-
-   - Create random heroes
-
-   3. 4. Logout
-
-   - Logout from the app at any time
+    - Logout
+       - Logout from the app at any time
 
 4. Page 404 for unknown url paths
 
