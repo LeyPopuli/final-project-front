@@ -67,4 +67,5 @@ mat-icon {
 .small-message {
   font-size: 0.8em;
   color:#048a9c;
+  margin-top: 2px;
 }
