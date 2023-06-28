@@ -1,3 +1,6 @@
+![demo-gif](./src/assets/readme-images/gif.gif)
+
+
 ![title-img](./src/assets/readme-images/title.png)
 
 7th Hero is a web application that allows users to discover and get started with the 7th Sea game, a role-playing game of adventure and exploration. If you want to learn more about this world, I suggest you visit: https://septimomarrev.wixsite.com/revolution
