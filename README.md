@@ -1,5 +1,5 @@
 ![demo-gif](./src/assets/readme-images/gif.gif)
-* The images in the gif are cropped.
+*The images in the gif are cropped.
 
 ![title-img](./src/assets/readme-images/title.png)
 
